@@ -29,10 +29,10 @@ if st.button("تشغيل الصوت ▶️"):
         tts.write_to_fp(buf)
         buf.seek(0)
 
-        if speed == "سريع":
+        if speed == "بطيء":
             out = change_speed(buf.read(), 0.5)
             st.audio(out, format="audio/wav")
-        elif speed == "بطيء":
+        elif speed == "سريع":
             out = change_speed(buf.read(), 2.0)
             st.audio(out, format="audio/wav")
         else:
