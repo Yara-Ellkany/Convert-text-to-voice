@@ -4,11 +4,11 @@ import numpy as np
 import soundfile as sf
 import io
 
-st.title(" حول النص إلى صوت!")
+st.title("🎙️ حول النص إلى صوت!")
 
 text = st.text_area("اكتب النص هنا:")
 lang = st.selectbox("اختار اللغة:", ["عربي", "إنجليزي"])
-speed = st.selectbox("اختار سرعة الصوت:", ["سريع", " عادي", " بطيء"])
+speed = st.selectbox("اختار سرعة الصوت:", ["سريع", "عادي", "بطيء"])
 
 def change_speed(audio_bytes, speed_factor):
     buf = io.BytesIO(audio_bytes)
@@ -21,7 +21,7 @@ def change_speed(audio_bytes, speed_factor):
     out.seek(0)
     return out
 
-if st.button("تشغيل الصوت "):
+if st.button("تشغيل الصوت ▶️"):
     if text:
         lang_code = "ar" if lang == "عربي" else "en"
         tts = gTTS(text=text, lang=lang_code)
@@ -29,13 +29,13 @@ if st.button("تشغيل الصوت "):
         tts.write_to_fp(buf)
         buf.seek(0)
 
-        if speed == " بطئ":
+        if speed == "سريع":
             out = change_speed(buf.read(), 0.5)
-        elif speed == " سريع":
+            st.audio(out, format="audio/wav")
+        elif speed == "بطيء":
             out = change_speed(buf.read(), 2.0)
+            st.audio(out, format="audio/wav")
         else:
-            out = buf
-
-        st.audio(out, format="audio/wav" if speed != " عادي" else "audio/mp3")
+            st.audio(buf, format="audio/mp3")
     else:
         st.warning("اكتب نص أولاً! ")
