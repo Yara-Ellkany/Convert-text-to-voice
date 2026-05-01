@@ -8,7 +8,7 @@ text = st.text_area("اكتب النص هنا:")
 
 lang = st.selectbox("اختار اللغة:", ["عربي", "إنجليزي"])
 
-speed = st.selectbox("اختار سرعة الصوت:", [" سريع", " عادي", "🐢 بطيء"])
+speed = st.selectbox("اختار سرعة الصوت:", [" سريع", " عادي", " بطيء"])
 
 if st.button("تشغيل الصوت "):
     if text:
