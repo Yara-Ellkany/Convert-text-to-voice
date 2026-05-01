@@ -30,9 +30,9 @@ if st.button("تشغيل الصوت "):
         buf.seek(0)
 
         if speed == " سريع":
-            out = change_speed(buf.read(), 0.7)
+            out = change_speed(buf.read(), 0.5)
         elif speed == " بطيء":
-            out = change_speed(buf.read(), 1.5)
+            out = change_speed(buf.read(), 2.0)
         else:
             out = buf
 
