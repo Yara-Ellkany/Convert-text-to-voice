@@ -3,7 +3,7 @@ import edge_tts
 import asyncio
 import io
  
-st.title("🎙️ حول النص إلى صوت!")
+st.title(" حول النص إلى صوت!")
  
 text = st.text_area("اكتب النص هنا:")
  
@@ -11,16 +11,16 @@ lang = st.selectbox("اختار اللغة:", ["عربي", "إنجليزي"])
  
 VOICES = {
     "عربي": {
-        "🧔 هادي (رجل - السعودية)":   "ar-SA-HadiNeural",
-        "👩 زارية (امرأة - السعودية)": "ar-SA-ZariyahNeural",
-        "👨 جمال (رجل - مصر)":         "ar-EG-ShakirNeural",
-        "👩 سلمى (امرأة - مصر)":       "ar-EG-SalmaNeural",
+        " هادي (رجل - السعودية)":   "ar-SA-HadiNeural",
+        " زارية (امرأة - السعودية)": "ar-SA-ZariyahNeural",
+        " جمال (رجل - مصر)":         "ar-EG-ShakirNeural",
+        " سلمى (امرأة - مصر)":       "ar-EG-SalmaNeural",
     },
     "إنجليزي": {
-        "👨 غاي (رجل - أمريكا)":       "en-US-GuyNeural",
-        "👩 جيني (امرأة - أمريكا)":    "en-US-JennyNeural",
-        "👨 رايان (رجل - بريطانيا)":   "en-GB-RyanNeural",
-        "👩 ليبرا (امرأة - بريطانيا)": "en-GB-LibbyNeural",
+        " غاي (رجل - أمريكا)":       "en-US-GuyNeural",
+        " جيني (امرأة - أمريكا)":    "en-US-JennyNeural",
+        " رايان (رجل - بريطانيا)":   "en-GB-RyanNeural",
+        " ليبرا (امرأة - بريطانيا)": "en-GB-LibbyNeural",
     },
 }
  
@@ -35,7 +35,7 @@ async def generate_audio(text, voice):
             audio_chunks.append(chunk["data"])
     return b"".join(audio_chunks)
  
-if st.button("تشغيل الصوت ▶️"):
+if st.button("تشغيل الصوت"):
     if text:
         audio_bytes = asyncio.run(generate_audio(text, voice_id))
         st.audio(audio_bytes, format="audio/mp3")
