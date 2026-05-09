@@ -11,7 +11,7 @@ lang = st.selectbox("اختار اللغة:", ["عربي", "إنجليزي"])
  
 VOICES = {
     "عربي": {
-        " هادي (رجل - السعودية)":   "ar-SA-HadiNeural",
+        
         " زارية (امرأة - السعودية)": "ar-SA-ZariyahNeural",
         " جمال (رجل - مصر)":         "ar-EG-ShakirNeural",
         " سلمى (امرأة - مصر)":       "ar-EG-SalmaNeural",
