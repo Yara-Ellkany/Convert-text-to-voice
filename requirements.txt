@@ -1,4 +1,2 @@
 streamlit
-gtts
-numpy
-soundfile
+edge-tts
